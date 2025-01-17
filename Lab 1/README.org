@@ -1,0 +1,78 @@
+* CptS 360 / Spring 2023 / Lab 1
+
+If you're reading this, you've successfully accepted the GitHub
+Classroom assignment and you have a repository set up. The next step
+is to clone it and start working.
+
+** Cloning
+
+You can access the clone links on GitHub like this:
+
+[[./static/clone.png]]
+
+I recommend setting up SSH-based authentication for your GitHub
+account because it means you don't have to rely on password-based
+authentication or deal with GitHub's access tokens. You can [[https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account][add an
+existing key]] or [[https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent][generate a new one]].
+
+If you don't want to use SSH, the alternative is HTTPS. GitHub phased
+out password-based authentication a while back, so if you want to use
+this method you'll have to add a "personal access token". Click your
+profile icon in the upper right and click on settings:
+
+[[./static/settings.png]]
+
+Then go down to the bottom of the lefthand panel and click on
+developer settings:
+
+[[./static/developer-settings.png]]
+
+Go to ~Tokens (classic)~:
+
+[[./static/tokens-classic.png]]
+
+And generate a classic token:
+
+[[./static/generate-token.png]]
+
+You'll have to check the boxes corresponding to what permissions you
+want available when you use this token.
+
+If you're using SSH then you'll run this command:
+
+#+BEGIN_QUOTE
+git clone git@github.com:CPTS-360-SPRING-2023/Lab1.git
+#+END_QUOTE
+
+If you correctly configured your keys then it should run without any
+prompt.
+
+If you're using HTTPS with a GitHub access token then you'll run this:
+
+#+BEGIN_QUOTE
+git clone https://github.com/CPTS-360-SPRING-2023/Lab1.git
+#+END_QUOTE
+
+Enter your GitHub username and the token that you generated
+earlier. The token is only shown once when it's generated, so you'll
+have to store it somewhere safe if you want to use it multiple
+times. A password manager would be appropriate.
+
+** Assignment Instructions
+
+The instructions are on KC's website [[https://eecs.wsu.edu/~cs360/LAB1.html][here]]. The files in this repo are
+from the ~samples/~ directory [[https://eecs.wsu.edu/~cs360/samples/LAB1/][here]], conveniently divided into part 1
+and part 2 directories. There are also the with the addition of
+~mk.sh~ and ~t.c~ files in each part. To do the assignment you'll edit
+~t.c~ and run ~mk.sh~ to compile your code. After running ~mk.sh~ you
+can run the result with ~./a.out~, or run ~./mk.sh && ./a.out~ to
+automatically compile and run in one command.
+
++ The provided ~myprintf~ binary file is a program which serves as a
+  sample solution for part 1.
++ The ~ptable~ binary is the sample solution for part 2.
++ ~vdisk~ is a virtual disk image with a master boot record and a few
+  partitions on it.
+
+Part 2 of the assignment roughly corresponds to section 7.3 in KC's
+book /Systems Programming in Unix\/Linux/.
